@@ -1,0 +1,65 @@
+<div class="contents">
+    <div class="cont" *ngIf="fields">
+        <h2>{{fields.fieldName}}</h2>
+        <hr>
+
+        <div class="card">
+        <form #form="ngForm">
+            <div style="columns:2">
+                <label>Field / Block :</label>
+                <input type="text" name="fieldname" value="{{fields.fieldName}}" [(ngModel)]="fields.fieldName"/>
+                <label>Field Area (Ha) :</label>
+                <input type="text" name="area" value="{{fields.area}}" [(ngModel)]="fields.area"/>
+            </div>
+
+            <div style="columns:2">
+                <label>Maturity :</label>
+                <select name="maturity" [(ngModel)] = "fields.isMature" (change)="getcategory($event)">
+                    <option [ngValue]="true">Mature</option>
+                    <option [ngValue]="false">Immature</option>
+                </select>
+                <label>Crop Category :</label>
+                <select name="cropCat" [(ngModel)]="fields.cropCategoryId">        
+                <option *ngFor="let category of filterCropCategories" value="{{category.id}}">{{category.cropCategory}}</option>
+                </select>
+            </div>
+
+            <div style="columns:1;" *ngIf="fields.cropCategoryId == 12 || fields.cropCategoryId == 13">
+                <label>Others crop :</label>
+                <b><input type="text" name="other" [(ngModel)]="fields.otherCrop"/></b>
+              </div>
+
+              <div style="columns:2;">
+                <label>Year Planted :</label>
+                <b><input type="number" name="year" [(ngModel)]="fields.yearPlanted"/></b>
+                <div *ngIf="fields.cropCategoryId != 12">
+                <ng-container *ngIf="fields.cropCategoryId != 13">
+                <label>Clone :</label>
+                <select name="clone" [(ngModel)]="fields.cloneId">
+                <option value="" disabled selected>Please Choose</option>
+                <option *ngFor="let clone of clones" value="{{clone.id}}">{{clone.cloneName}}</option>
+                </select>
+                  </ng-container>
+                </div>
+              </div>
+
+            <div style="columns:2;">
+                <label>Status</label>
+                <select value="{{fields.status}}" name="status" [(ngModel)]="fields.status" >
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option> 
+                </select>
+                <label>Date Open Tapping :</label>
+                <input  name="dateopentapping" type="date"  [(ngModel)]="fields.dateOpenTapping"/>       
+            </div>
+
+            <div style="float:right;">
+                <button (click)="updateField(fields)" class="btn-add" type="submit">Update<img style="width:20px;" src="../assets/Images/add-icon.png"></button>
+              </div>
+              <div style="float:left;">
+                <button class="btn-back" routerLink="/e-estate/field-info"><img style="width:20px;" src="../assets/Images/back-icon.png">Back</button>
+                </div>
+        </form>
+    </div>
+    </div>
+</div>
