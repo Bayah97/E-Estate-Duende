@@ -1,0 +1,74 @@
+<div class="contents">
+    <div class="cont">
+        <h2><b>Ladang Getah Keramat</b></h2>
+                <hr>
+                <div style="text-align: center;">
+                    <p>Month and Year: </p>
+                    <input type="month" #month value="{{previousMonth | date: 'YYY-MM'}}" (change)="monthSelected(month.value)"/>
+                    <!-- <input type="month" value="{{previousMonth | date: 'YYY-MM'}}" [(ngModel)]="labor.monthYear"/> -->
+                    </div>
+                    <hr>
+                <div class="card">
+                    <form #form="ngForm"  (ngSubmit)="onSubmit()">
+                            <div style="columns:2;">
+                                <label>Country :</label>
+                                <select name="country" [(ngModel)]="labor.countryId">
+                                    <option value="" disabled selected>Please Choose</option>
+                                    <option *ngFor="let country of countries" value="{{country.id}}">{{country.country}}</option>
+                                </select>
+                                <label>No of Checkrole Tappers :</label>
+                                <input type="number" name="tapperCheckrole" [(ngModel)]="labor.tapperCheckrole"/>
+                                </div>
+                            <div style="columns:2;">
+                                <label>No of Tappers Employed by Contractors :</label>
+                                <input type="number" name="tapperContractor" [(ngModel)]="labor.tapperContractor"/>
+                                <label>No of Checkrole Field Workers :</label>
+                                <input type="number" name="fieldCheckrole" [(ngModel)]="labor.fieldCheckrole"/>
+                            </div>
+                            <div style="columns:2;">
+                                <label>No of Field Workers Employed by Contractors :</label>
+                                <input type="number" name="fieldContractor" [(ngModel)]="labor.fieldContractor" (ngModelChange)="calculateWorker()"/>
+                                <label>Total Worker: </label>
+                                <input type="text" disabled value="{{totalWorker}}"/>
+                            </div>
+                            <h2>Total Worker: {{totalWorker}} people</h2>
+                            <div style="float:right; margin-top: -45px;">
+                                <button class="btn-add" type="submit">Add<img style="width:20px;" src="../assets/Images/add-icon.png"></button>
+                              </div>
+                    </form>
+                </div>
+                <hr>
+
+            <div class="card">
+            <div style="text-align: center;overflow-x: auto;">
+                <table style="width: 100%;">
+                    <tr>
+                        <th>Month and Year</th>
+                        <th>Worker Type</th>
+                        <th>Country</th>
+                        <th>No.of Checkrole Tappers </th>
+                        <th>No.of Tappers Employed by Contractors</th>
+                        <th>No.of Checkrole Field Workers</th>
+                        <th>No.of Field Workers Employed by Contractors</th>
+                        <th>Total Worker</th>
+                        <th>Action</th>
+                    </tr>
+            
+                    <tr *ngFor="let labor of filterLabor">
+                        <td><input type="text" value="{{labor.monthYear| date: 'MMM-yyyy'}}" disabled/></td>
+                        <td><input type="text" value="{{labor.country.isLocal == true ? 'Local':'Foreign'}}" disabled></td>
+                        <td><input type="text" value="{{labor.country.country}}" disabled></td>
+                        <td><input type="number" value="{{labor.tapperCheckrole}}" disabled></td>
+                        <td><input type="number" value="{{labor.tapperContractor}}" disabled></td>
+                        <td><input type="number" value="{{labor.fieldCheckrole}}" disabled></td>
+                        <td><input type="number" value="{{labor.fieldContractor}}" disabled></td>
+                        <td><label>{{labor.total}}</label></td>
+                        <td style="text-align:center"><button class="btn-del"><img (click)="delete(labor.id)" style="width:20px;" src="../assets/Images/delete.png"></button></td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+        </div>
+</div>
+</div>
+

@@ -1,0 +1,134 @@
+<div class="contents">
+  <div class="cont">
+    <h2><b>{{estates.estateName}}</b></h2>
+    <hr>
+      <div class="card" >
+        <table >
+          <tr>
+            <td>Estate Name</td>
+            <td><span>:</span></td>
+            <td>{{estates.estateName}}</td>
+          </tr>
+
+          <tr>
+            <td>Address</td>
+            <td><span>:</span></td>
+            <td>{{estates.address1}}, {{estates.address2}}, {{estates.address3}}</td>
+          </tr>
+
+          <tr>
+            <td>Postcode</td>
+            <td><span>:</span></td>
+            <td>{{estates.postcode}}</td>
+          </tr>
+
+          <tr>
+            <td>Town</td>
+            <td><span>:</span></td>
+            <td>{{estates.town}}</td>
+          </tr>
+
+          <tr>
+            <td>State</td>
+            <td><span>:</span></td>
+            <td>{{estates.state}}</td>
+          </tr>
+
+          <tr>
+            <td>Phone No</td>
+            <td><span>:</span></td>
+            <td>{{estates.phone}}</td>
+          </tr>
+
+          <tr>
+            <td>Fax No</td>
+            <td><span>:</span></td>
+            <td>{{estates.fax}}</td>
+          </tr>
+
+          <tr>
+            <td>Email</td>
+            <td><span>:</span></td>
+            <td>{{estates.email}}</td>
+          </tr>
+
+          <tr>
+            <td>License No</td>
+            <td><span>:</span></td>
+            <td>{{estates.licenseNo}}</td>
+          </tr>
+
+          <tr>
+            <td>Total Area (Ha)</td>
+            <td><span>:</span></td>
+            <td>{{estates.totalArea}}</td>
+          </tr>
+
+          <tr>
+            <td>Financial Year Range</td>
+            <td><span>:</span></td>
+            <td>{{estates.financialYear}}</td>
+          </tr>
+
+          <tr>
+            <td>Establishment Name</td>
+            <td><span>:</span></td>
+            <td>{{estates.establishment}}</td>
+          </tr>
+
+          <tr>
+            <td>Membership Type</td>
+            <td><span>:</span></td>
+            <td>{{estates.membership}}</td>
+          </tr>
+        </table>
+
+        <div style="float:right;">
+          <button class="btn-add" style="float:right;" [ngClass]=
+          "{'blue': estates.status == 'Active', 'red':estates.status == 'Inactive'}">{{estates.status}}</button>
+        </div>
+              
+    </div>
+    <br>
+
+    <div class="card">
+      <h2><u>List of Fields/Blocks</u></h2>
+      <div style="float:right">
+        <button style="float:right" class="btn-add" routerLink="/e-estate/field-info">Add New Fields<img style="width:20px;" src="../assets/Images/add-icon.png"/></button>
+    </div><br>
+      <table style="width: 100%;">
+        <thead>
+            <tr>
+              <th class="td">Field Name</th>
+              <th class="td">Area</th>
+              <th class="td">Maturity</th>
+              <th class="td">Crop Category</th>
+              <th class="td">Other Crop</th>
+              <th class="td">Year Planted</th>
+              <th class="td">Clone</th>
+              <th class="td">Status</th>
+              <th class="td">Date Open Tapping</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="td">{{estates.fields.fieldName}}</td>
+            <td class="td">{{estates.fields.area}}</td>
+            <td class="td">{{estates.fields.isMature == true ? 'Mature':'Immature'}}</td>
+            <td class="td">{{estates.cropCategory}}</td>
+            <td class="td">{{estates.fields.otherCrop}}</td>
+            <td class="td">{{estates.fields.yearPlanted}}</td>
+            <td class="td">{{estates.clone}}</td>
+            <td class="td">{{estates.fields.status}}</td>
+            <td class="td">{{estates.fields.dateOpenTapping | date : 'dd/MM/YYYY' }}</td>
+          </tr>
+        </tbody>
+      </table> <br>
+
+      <div style="float:left">
+        <button class="btn-back" routerLink="/e-estate/estate"><img style="width:20px;" src="../assets/Images/back-icon.png">Back</button>
+        </div>
+    </div><br>
+  </div>
+<!-- </div> -->
+
