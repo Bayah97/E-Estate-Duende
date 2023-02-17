@@ -1,0 +1,30 @@
+<div class="contents">
+
+    <div class="cont">
+        <h2><b>List of Companies</b></h2>
+        <hr>
+        <input type="text" [(ngModel)]="term" placeholder="Filter Company"/>
+        <div class="card" *ngFor="let company of companies | filter: term">
+            <h2 style="text-align:left"><a routerLink="/e-estate/company-profile/{{company.id}}">{{company.companyName}}</a></h2>
+            <table>      
+                <tr>
+                  <td>Address</td>
+                  <td><span>:</span></td>
+                  <td>{{company.address1}}, {{company.address2}}, {{company.address3}}</td>
+                </tr>
+      
+                <tr>
+                  <td>Postcode</td>
+                  <td><span>:</span></td>
+                  <td>{{company.postcode}}</td>
+                </tr>
+      
+                <tr>
+                  <td>Town</td>
+                  <td><span>:</span></td>
+                  <td>{{company.town}}</td>
+                </tr>
+            </table> 
+        </div>
+    </div>
+</div>

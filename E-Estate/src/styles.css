@@ -1,0 +1,119 @@
+/* You can add global styles to this file, and also import other style files */
+.container{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding:35px;
+    height: 770px;
+  }
+
+.btn-update{
+    border: none; 
+    background-color: #2196F3;
+    padding: 6px 13px; 
+    cursor: pointer; 
+    border-radius: 15px;
+}
+.btn-update:hover {
+    background: #0b7dda;
+}
+
+.btn-next{
+    border: none; 
+    background-color: #3ab13e;
+    padding: 6px 13px; 
+    cursor: pointer; 
+    border-radius: 15px;
+}
+.btn-next:hover {
+    background: #2e7932ee;
+}
+
+.form{
+    margin-top: -11px;
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.btn-add{
+    border: none; 
+    background-color: #3ab13e;
+    padding: 6px 13px; 
+    cursor: pointer; 
+    border-radius: 15px;
+}
+.btn-add:hover {
+    background: #2e7932ee;
+}
+
+h2{
+    text-align: center;
+}
+
+.cont{
+    padding:25px;
+  }
+
+  .contents {
+    /* height: calc(125vh - 98px); */
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+    background-color: ghostwhite;
+    
+    /* display: flex; */
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-back{
+    border: none; 
+    background-color: grey;
+    padding: 6px 13px; 
+    cursor: pointer; 
+    border-radius: 15px;
+}
+
+.btn-back:hover {
+    background: rgb(92, 91, 91);
+}
+
+.btn-add-row{
+    border: none; 
+    background-color: #ff9800;;
+    padding: 6px 13px; 
+    cursor: pointer; 
+    border-radius: 15px;
+}
+.btn-add-row:hover {
+    background: #e68a00;
+}
+
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 20px;
+  }
+
+  .btn-del{
+    border: none; 
+    background-color: white;
+    padding: 6px 13px; 
+    cursor: pointer; 
+    border-radius: 15px;
+}
+
+.mat-drawer-inner-container {
+    overflow: visible !important;
+}
+
+mat-sidenav-container {
+    height: calc(100vh - 65px);
+    background-color: lightblue;
+    background-image: url("../src/assets/Images/building.jpg");
+    
+}
+
+body{
+    background-image: url('../src/assets/Images/building.jpg');
+
+}
+
+

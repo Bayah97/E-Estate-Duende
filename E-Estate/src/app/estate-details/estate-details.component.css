@@ -1,0 +1,39 @@
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 20px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+}
+
+.td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th{
+  background-color: #002b5c;
+  text-align: center;
+  color: white;
+}
+
+.blue{
+  border: none; 
+  background-color: #2196F3;
+  padding: 6px 13px; 
+  cursor: pointer; 
+  border-radius: 15px;
+}
+
+.red{
+  border: none; 
+  background-color: red;
+  padding: 6px 13px; 
+  cursor: pointer; 
+  border-radius: 15px;
+}

@@ -1,0 +1,68 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    width: 210px;
+  }
+
+  th{
+    background-color: #002b5c;
+    color: white;
+  }
+  
+  .btn{
+    border: none; /* Remove borders */
+    background-color: #04AA6D;
+    padding: 10px 20px;
+    cursor: pointer; /* Add a pointer cursor on mouse-over */
+    margin-top: -25px;
+    border-radius: 15px;
+}
+
+.btn:hover {background: #46a049;}
+
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  cursor: pointer;
+}
+
+.myClass{
+  background-color : red;
+}
+
+table{
+  background-color: white;
+}
+
+.contents{
+  overflow-y: auto;
+}
+
+.blue{
+  border: none; 
+  background-color: #2196F3;
+  padding: 6px 13px; 
+  cursor: pointer; 
+  border-radius: 15px;
+}
+
+.red{
+  border: none; 
+  background-color: red;
+  padding: 6px 13px; 
+  cursor: pointer; 
+  border-radius: 15px;
+}
+
+
+
+

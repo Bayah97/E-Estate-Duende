@@ -1,0 +1,29 @@
+<mat-toolbar >
+    <mat-toolbar-row>
+        <div>
+            <button mat-button class="menu-button" *ngIf="sidenav.mode ==='over'" (click)="sidenav.toggle()">
+                <mat-icon *ngIf="!sidenav.opened">
+                    menu
+                </mat-icon>
+                <mat-icon *ngIf="sidenav.opened">
+                    close
+                </mat-icon>
+            </button>
+            <img width="75px" style="padding:10px;" src ="../assets/Images/LGM-logo.png"/><a style="font-size:25px;" mat-button [routerLink]="'/e-estate'">Malaysian Rubber Board</a>
+          </div>
+          <span class="flexExpand"></span>
+          <div>
+            <span>Hi {{user.name}} ! </span>
+            <button class="btn btn-danger" (click)="logOut()">Logout</button>
+          </div>
+        </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav">
+        <app-sidenav></app-sidenav>
+    </mat-sidenav>
+    <div class="content">
+        <router-outlet>  
+        </router-outlet>                                                                                       
+    </div>
+</mat-sidenav-container>
